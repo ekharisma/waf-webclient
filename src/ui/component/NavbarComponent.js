@@ -1,7 +1,9 @@
-import { Nav, Navbar } from "react-bootstrap";
+import { Button, Nav, Navbar } from "react-bootstrap";
+import { unsetToken } from "../../data/localStorage";
 import logo from "../../resources/logo.png"
 
 export default function NavbarComponent() {
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Navbar.Brand href="#home" className="m-1">
@@ -14,6 +16,11 @@ export default function NavbarComponent() {
                     <Nav.Link href="/credit">Credit</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
+            <Nav>
+                <Button className="m-1" variant="danger" href="/login" onClick={unsetToken}>
+                    Logout
+                </Button>
+            </Nav>
         </Navbar>
     )
 }
